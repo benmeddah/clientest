@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XSS DOM Based</title>
+    <link rel="stylesheet" property="stylesheet" type="text/css" href="style.css" media="all">
+</head>
+<body><link rel='stylesheet' property='stylesheet' id='s' type='text/css' href='dom.css' media='all' />
+    <h1>Are you lucky ?</h1>
+    <hr>
+    <p>Choose a number between 0 and 100</p>
+    <form action="" method="get" name="form">
+        <input type="text" id="number" name="number" placeholder="Number">
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <div id="state"></div>
+</body>
+    <% if(num != '') { %>
+    <script>
+    var random = Math.random() * (99);
+    var number = '<%- num %>';
+    if(random == number) {
+        document.getElementById('state').style.color = 'green';
+        document.getElementById('state').innerHTML = 'You won the game ;)';
+    }
+    else{
+        document.getElementById('state').style.color = 'red';
+        document.getElementById('state').innerText = 'Sorry, wrong answer ! The right answer was ' + random;
+    }
+    </script>
+    <% } %>
+    </html>

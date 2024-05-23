@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stored XSS</title>
+  </head>
+
+  <body inject_newsvd="true">
+    <link
+      rel="stylesheet"
+      property="stylesheet"
+      id="s"
+      type="text/css"
+      href="/style.css"
+      media="all"
+    />
+    <h1>XSS stored</h1>
+    <hr />
+    <span style="text-align: right; float: right">Status: visitor</span><br />
+
+    <b>message enregistré / content saved</b><br /><br />
+    <form action="" method="POST">
+      <div>
+        Title:<br />
+        <input type="text" name="titre" value="" />
+      </div>
+      <br />
+      <div>
+        Message:<br />
+        <textarea name="message" rows="3" cols="50"></textarea>
+      </div>
+      <div>
+        <input type="submit" value="send" />
+      </div>
+    </form>
+    <br /><br />
+    <div>
+      <div>Posted messages:</div>
+      <br />
+      <span><b>Welcome</b></span
+      ><br />
+      <span
+        >N'hésitez pas à me laisser un message / Feel free to leave a
+        message</span
+      ><br />
+      <hr />
+      <% msgArray.forEach(function(item) { %>
+      <span><b><%= item.title %></b></span
+      ><br />
+      <span><%- item.message %></span><br />
+      <hr />
+      <% }); %>
+    </div>
+  </body>
+</html>
+
+

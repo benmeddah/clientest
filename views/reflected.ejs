@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search (Vulnerable)</title>
+</head>
+<body>
+    <h1>Search for Reflected</h1>
+    <form action="">
+        <label for="search">Search Query:</label>
+        <input type="text" id="search" name="search" placeholder="Enter your search term">
+        <button type="submit">Search</button>
+    </form>
+    <br>
+    <p>Your search input is: 
+        <span><%- search %></span> 
+    </p>
+    <div id="search-output"></div>
+</body>
+</html>
